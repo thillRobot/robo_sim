@@ -1,0 +1,23 @@
+function [speed,turn]=robot_decide(sensor)
+        
+speed = 5
+turn = 0
+    
+        if sensor(4)<10 % if danger is in front
+            speed=-15;
+            turn=0;
+        end     
+        if sensor(6)<10 % if danger is in front
+            speed=5;
+            turn=.05;
+            disp('left')
+        end
+        if sensor(2)<10 % if danger is in front
+            speed=5;
+            turn=-.05;
+            disp('right')
+        end
+        
+        
+        
+end

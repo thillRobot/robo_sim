@@ -46,16 +46,16 @@
 
 %Version 1.9 - T.H. - Release to ENGR Spring 2017 
 
-% Version 2.0 - T.H. Welcome to 2020 
+% Version 2.0 - T.H. Welcome to Spring 2020 - ENGR1120-800
 
 clear all
 close all
 clc
 set(0,'DefaultFigureWindowStyle','docked')
 
-disp('***************************************************************')
-disp('RoboSim Version 2.0 - Tennessee Technological Univeristy - 2020')
-disp('***************************************************************')
+fprintf('***************************************************************')
+fprintf('RoboSim Version 2.0 - Tennessee Technological Univeristy - 2020')
+fprintf('***************************************************************')
 
 map_opt=input(' 1) Would you like to use a harcoded map?  \n 2) Or, Would you like to build a new map?  \n 3) Or, Would you like use a map from a file? \n Enter your choice. (1/2/3) ');
 
@@ -83,8 +83,11 @@ elseif map_opt==2 %build and save a custom map
     
 elseif map_opt==3 %load a map from a .dat file
     
-    new_map=input('Please enter the name of the file you wish to view. ','s');
-    G=load(new_map);
+    map_file=input('Please enter the name of the file you wish to view. ','s');
+    map_file=strcat('..\maps\',map_file);
+    map_file=strcat(map_file,'.txt');
+    G=load(map_file);
+
     arena_width=G(1,2);
     arena_height=G(1,1);
     obsx=G(:,1:4);
@@ -106,7 +109,7 @@ for j=1:length(obsx(:,1))
 end
 
 %initialial robot position;
-disp('Where do want to start the robot? Choose location with mouse.'); %x,y,theta triplet, initial pose 
+fprintf('Where do want to start the robot? Choose location with mouse.'); %x,y,theta triplet, initial pose 
 pos(1,1:2)=ginput(1);
 
 pos(1,3)=input('Type the initial heading in degrees. ');
@@ -120,7 +123,7 @@ ctr=0;      % main whilie loop counter
 escaped=0;  % flag for are you still in the area
 crashed=0;  % flag for if youve hit an object
 tic;        % start the clock
-disp('Your robot is trying to escape!')
+fprintf('Your robot is trying to escape!')
 while (~escaped && ~crashed)
     ctr=ctr+1;
     

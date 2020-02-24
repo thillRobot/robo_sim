@@ -6,19 +6,19 @@ function [speed,turn]=robot_decide(sensor,velo)
    if sensor(4)<8 % if danger is in front
         speed=-5;
         turn=0;
-        disp('Danger in Front!')
+        fprintf('Danger in Front!')
    
    end
-   if sensor(6)<8 % if danger is on left
+   if sensor(6)<8 % if danger is on right
         speed=-5;
-        turn=6;
-        disp('Danger on Left!')
+        turn=10;
+        fprintf('Danger on Right!')
    
    end
-   if sensor(2)<8 % if danger is on right
+   if sensor(2)<8 % if danger is on left
         speed=-5;
-        turn=-6;
-        disp('Danger on Right!')
+        turn=-10;
+        fprintf('Danger on Left!')
    
    end
            

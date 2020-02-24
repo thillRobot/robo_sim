@@ -11,7 +11,7 @@ function [robot,pose,vel] = drive_robot(F,T,pose,vel)
     %mass moment of inertia of a disk
     inertia=mass*((size_x)^2+(size_y)^2)/12; 
     
-    c=0.1;ct=0.1; % damping coefficients
+    c=0.10;ct=0.15; % damping coefficients
     %newtons second law
     accel(1)=F/mass-c*vel(1); %translation
     accel(2)=T/inertia-ct*vel(2); %rotation

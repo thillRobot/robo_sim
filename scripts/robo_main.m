@@ -53,9 +53,9 @@ close all
 clc
 set(0,'DefaultFigureWindowStyle','docked')
 
-fprintf('***************************************************************')
-fprintf('RoboSim Version 2.0 - Tennessee Technological Univeristy - 2020')
-fprintf('***************************************************************')
+fprintf('***************************************************************\n')
+fprintf('RoboSim Version 2.0 - Tennessee Technological Univeristy - 2020\n')
+fprintf('***************************************************************\n')
 
 map_opt=input(' 1) Would you like to use a harcoded map?  \n 2) Or, Would you like to build a new map?  \n 3) Or, Would you like use a map from a file? \n Enter your choice. (1/2/3) ');
 
@@ -109,10 +109,10 @@ for j=1:length(obsx(:,1))
 end
 
 %initialial robot position;
-fprintf('Where do want to start the robot? Choose location with mouse.'); %x,y,theta triplet, initial pose 
+fprintf('Where do want to start the robot? Choose location with mouse: \n'); %x,y,theta triplet, initial pose 
 pos(1,1:2)=ginput(1);
 
-pos(1,3)=input('Type the initial heading in degrees. ');
+pos(1,3)=input('Type the initial heading in degrees: ');
 pos(1,3)=pos(1,3)*pi/180;
 
 vel(1,:)=[0,0];  %robot starts at rest [vx, w] [forward velocity , angular velocity]
@@ -123,7 +123,7 @@ ctr=0;      % main whilie loop counter
 escaped=0;  % flag for are you still in the area
 crashed=0;  % flag for if youve hit an object
 tic;        % start the clock
-fprintf('Your robot is trying to escape!')
+fprintf('Your robot is trying to escape!\n')
 while (~escaped && ~crashed)
     ctr=ctr+1;
     
@@ -154,11 +154,11 @@ while (~escaped && ~crashed)
     
 % ********** display data if the run is over ****************    
     if escaped
-        msg=sprintf('Congratulations, your robot has escaped the arena in %f seconds!!!',toc);
+        msg=sprintf('Congratulations, your robot has escaped the arena in %f seconds!!!\n',toc);
         fprintf(msg)
         title(msg)
     elseif crashed
-        msg=sprintf('Oops, your robot crashed and has been destroyed in %f seconds!!!',toc);
+        msg=sprintf('Oops, your robot crashed and has been destroyed in %f seconds!!!\n',toc);
         title(msg)
         fprintf(msg)
     end

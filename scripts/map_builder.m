@@ -3,8 +3,10 @@
 %currently maps are square (v1_3)
 function [xs,ys,myHeight,myWidth] = map_builder()
 
-    myFile=input('what would you like to name you map file? ','s');
-    myID=fopen(myFile,'w');
+    map_file=input('What would you like to name the new map? ','s');
+    map_file=strcat('..\maps\',map_file);
+    map_file=strcat(map_file,'.txt');
+    myID=fopen(map_file,'w');
 
     myWidth=input('Choose the Arena Width. ');
     myHeight=input('Choose the Arena Height. ');

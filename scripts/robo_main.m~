@@ -42,11 +42,9 @@
 %             * clear names - no camels (DONE)
 %             * timer callback based animation  
 %             * fix escaped and crashed issue
-%             * added dampers! c ct
 
 %Version 1.9 - T.H. - Release to ENGR Spring 2017 
-
-% Version 2.0 - T.H. Welcome to 2020 
+%Version 2.0 - T.H. Welcome to 2020
 
 clear all
 close all
@@ -54,7 +52,7 @@ clc
 set(0,'DefaultFigureWindowStyle','docked')
 
 disp('***************************************************************')
-disp('RoboSim Version 2.0 - Tennessee Technological Univeristy - 2020')
+disp('RoboSim Version 2.0 - Tennessee Technological Univeristy - 2016')
 disp('***************************************************************')
 
 map_opt=input(' 1) Would you like to use a harcoded map?  \n 2) Or, Would you like to build a new map?  \n 3) Or, Would you like use a map from a file? \n Enter your choice. (1/2/3) ');
